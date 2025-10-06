@@ -1,0 +1,276 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Shield, Phone, Mail, CheckCircle2, BadgeCheck, MapPin, ClipboardList, Car, Users, Building2, ShoppingCart, Calendar } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+// Single-file React landing page for Blackthorn Security Solutions LLC
+// TailwindCSS + shadcn/ui components
+// Colors: Blue + White per request
+// Replace placeholders (PHONE, EMAIL, LICENSE, ADDRESS, SOCIAL) before deploying
+
+export default function BlackthornSecuritySite() {
+  return (
+    <div className="min-h-screen bg-white text-slate-900">
+      {/* Top Bar */}
+      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="p-2 bg-blue-600 rounded-xl text-white"><Shield className="h-5 w-5"/></div>
+            <span className="font-bold tracking-tight text-lg">Blackthorn Security Solutions LLC</span>
+          </div>
+          <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="#services" className="hover:text-blue-700">Services</a>
+            <a href="#credentials" className="hover:text-blue-700">Credentials</a>
+            <a href="#industries" className="hover:text-blue-700">Industries</a>
+            <a href="#contact" className="hover:text-blue-700">Contact</a>
+          </nav>
+          <div className="hidden md:flex items-center gap-3">
+            <Button asChild className="bg-blue-600 hover:bg-blue-700">
+              <a href="#contact">Request Quote</a>
+            </Button>
+            <Button variant="outline" asChild>
+              <a href="tel:+1-555-555-0199"><Phone className="h-4 w-4 mr-2"/> Call</a>
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="bg-gradient-to-b from-blue-700 to-blue-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center py-16 md:py-24">
+          <motion.div initial={{opacity:0, y:10}} animate={{opacity:1, y:0}} transition={{duration:0.5}}>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+              Professional, Discreet, and Reliable
+            </h1>
+            <p className="mt-4 text-blue-100 text-lg max-w-xl">
+              Veteran‑owned and operated security firm. Armed and unarmed officers. C.L.E.E.T. certified (I, II, IV). Licensed and bonded.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button asChild className="bg-white text-blue-700 hover:bg-blue-50">
+                <a href="#contact">Get a Free Assessment</a>
+              </Button>
+              <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
+                <a href="#services">Explore Services</a>
+              </Button>
+            </div>
+            <div className="mt-6 flex items-center gap-4 text-sm text-blue-100">
+              <div className="flex items-center gap-2"><BadgeCheck className="h-4 w-4"/> 24/7 Availability</div>
+              <div className="flex items-center gap-2"><Shield className="h-4 w-4"/> Custom Post Orders</div>
+            </div>
+          </motion.div>
+          <motion.div initial={{opacity:0, y:10}} animate={{opacity:1, y:0}} transition={{duration:0.6}} className="relative">
+            <div className="rounded-2xl bg-white/10 p-1">
+              <div className="rounded-xl bg-white text-slate-900 p-6 shadow-lg">
+                <h3 className="font-semibold text-slate-800">Rapid Quote</h3>
+                <p className="text-sm text-slate-500">Answer a few questions. Get a same‑day estimate.</p>
+                <form action="#contact" className="mt-4 grid grid-cols-1 gap-3">
+                  <input className="border rounded-lg px-3 py-2" placeholder="Name" />
+                  <input className="border rounded-lg px-3 py-2" placeholder="Email" />
+                  <input className="border rounded-lg px-3 py-2" placeholder="Phone" />
+                  <select className="border rounded-lg px-3 py-2">
+                    <option>Event Security</option>
+                    <option>Property/Facility Security</option>
+                    <option>Executive Protection</option>
+                    <option>Mobile Patrol</option>
+                    <option>Construction Site</option>
+                    <option>Retail/Loss Prevention</option>
+                  </select>
+                  <Button className="bg-blue-600 hover:bg-blue-700">Start Quote</Button>
+                </form>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Trust Badges */}
+      <section id="credentials" className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-4 gap-4">
+          {[
+            {label:"Veteran Owned & Operated"},
+            {label:"Licensed & Bonded"},
+            {label:"C.L.E.E.T. Certified I, II, IV"},
+            {label:"Armed & Unarmed Officers"},
+          ].map((b, i)=> (
+            <Card key={i} className="border-blue-100">
+              <CardContent className="p-4 flex items-center gap-3">
+                <CheckCircle2 className="h-5 w-5 text-blue-600"/>
+                <span className="text-sm font-medium">{b.label}</span>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <h2 className="text-2xl md:text-3xl font-bold">Comprehensive Security Services</h2>
+          <p className="mt-2 text-slate-600 max-w-2xl">Scaled to your risk profile and venue. Short‑notice coverage available.</p>
+          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ServiceCard icon={<Building2 className="h-5 w-5"/>} title="On‑Site & Facility Security" desc="Uniformed officers, access control, visitor management, incident reporting."/>
+            <ServiceCard icon={<Calendar className="h-5 w-5"/>} title="Event Security" desc="Crowd management, ticketing support, VIP areas, entry screening."/>
+            <ServiceCard icon={<Users className="h-5 w-5"/>} title="Executive Protection" desc="Discreet close protection, advance work, route planning, residential."/>
+            <ServiceCard icon={<Car className="h-5 w-5"/>} title="Mobile Patrol" desc="Marked/unmarked patrols, perimeter checks, alarm response, lock/unlock."/>
+            <ServiceCard icon={<ShoppingCart className="h-5 w-5"/>} title="Retail & Loss Prevention" desc="Deterrence, CCTV coordination, incident documentation, shrink reduction."/>
+            <ServiceCard icon={<ClipboardList className="h-5 w-5"/>} title="Post Orders & Reporting" desc="Custom SOPs, digital DARs, photo/video evidence, client dashboards."/>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries */}
+      <section id="industries" className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <h2 className="text-2xl md:text-3xl font-bold">Industries Served</h2>
+          <p className="mt-2 text-slate-600 max-w-2xl">Private events, commercial properties, residential communities, healthcare, construction, and more.</p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {[
+              "Private Events","Corporate Offices","Warehouses","Construction Sites","Multi‑Family/HOA","Healthcare","Retail","Hospitality","Churches","Auto Dealerships"
+            ].map((tag)=> (
+              <span key={tag} className="text-sm bg-slate-100 px-3 py-1 rounded-full">{tag}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Coverage + CTA */}
+      <section className="bg-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid md:grid-cols-3 gap-6 items-center">
+          <div className="md:col-span-2">
+            <h3 className="text-xl md:text-2xl font-bold text-slate-900">Serving Oklahoma and surrounding regions</h3>
+            <p className="mt-2 text-slate-600">Rapid deployment. Clear communication. Measurable results.</p>
+            <div className="mt-4 flex items-center gap-4 text-slate-700">
+              <div className="flex items-center gap-2"><MapPin className="h-5 w-5 text-blue-700"/> Regional coverage</div>
+              <div className="flex items-center gap-2"><BadgeCheck className="h-5 w-5 text-blue-700"/> Insurance & bonding in place</div>
+            </div>
+          </div>
+          <div className="flex md:justify-end">
+            <Button asChild className="bg-blue-600 hover:bg-blue-700">
+              <a href="#contact">Schedule a Site Walk</a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Process */}
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <h2 className="text-2xl md:text-3xl font-bold">Simple Engagement Process</h2>
+          <div className="mt-8 grid md:grid-cols-3 gap-6">
+            <Step n={1} title="Assess" desc="Brief call to define threats, environment, and objectives."/>
+            <Step n={2} title="Plan" desc="We craft post orders, staffing, and reporting cadence."/>
+            <Step n={3} title="Protect" desc="Deploy officers. Monitor. Iterate with clear KPIs."/>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid lg:grid-cols-2 gap-10">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold">Request a Quote</h2>
+              <p className="mt-2 text-slate-600">Response within one business day. For urgent needs, call directly.</p>
+              <div className="mt-6 space-y-3 text-slate-700">
+                <p className="flex items-center gap-2"><Phone className="h-5 w-5 text-blue-700"/> <a href="tel:+1-555-555-0199" className="hover:underline">(555) 555‑0199</a></p>
+                <p className="flex items-center gap-2"><Mail className="h-5 w-5 text-blue-700"/> <a href="mailto:contact@blackthornsecurity.com" className="hover:underline">contact@blackthornsecurity.com</a></p>
+                <p className="flex items-center gap-2"><Shield className="h-5 w-5 text-blue-700"/> License #: <span className="font-mono">OK‑XXXXXX</span></p>
+              </div>
+            </div>
+            <Card>
+              <CardContent className="p-6">
+                <form className="grid grid-cols-1 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input required className="border rounded-lg px-3 py-2" placeholder="First name"/>
+                    <input required className="border rounded-lg px-3 py-2" placeholder="Last name"/>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <input required type="email" className="border rounded-lg px-3 py-2" placeholder="Email"/>
+                    <input required className="border rounded-lg px-3 py-2" placeholder="Phone"/>
+                  </div>
+                  <input className="border rounded-lg px-3 py-2" placeholder="Company (optional)"/>
+                  <select className="border rounded-lg px-3 py-2">
+                    <option>Event Security</option>
+                    <option>Property/Facility Security</option>
+                    <option>Executive Protection</option>
+                    <option>Mobile Patrol</option>
+                    <option>Construction Site</option>
+                    <option>Retail/Loss Prevention</option>
+                    <option>Other</option>
+                  </select>
+                  <textarea className="border rounded-lg px-3 py-2 min-h-[120px]" placeholder="Describe your need, dates, location, and hours."></textarea>
+                  <Button className="bg-blue-600 hover:bg-blue-700">Submit</Button>
+                  <p className="text-xs text-slate-500">By submitting, you consent to being contacted about your request.</p>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 text-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-2 gap-6">
+          <div>
+            <div className="flex items-center gap-2">
+              <div className="p-2 bg-blue-600 rounded-xl text-white"><Shield className="h-5 w-5"/></div>
+              <span className="font-semibold">Blackthorn Security Solutions LLC</span>
+            </div>
+            <p className="mt-3 text-sm text-slate-400">Professional, Discreet, and Reliable.</p>
+            <p className="mt-2 text-sm text-slate-400">Veteran‑owned. Armed & unarmed. C.L.E.E.T. I, II, IV. Licensed & bonded.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div>
+              <h4 className="font-semibold mb-3">Contact</h4>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-blue-500"/> <a href="tel:+1-555-555-0199" className="hover:underline">(555) 555‑0199</a></li>
+                <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-blue-500"/> <a href="mailto:contact@blackthornsecurity.com" className="hover:underline">contact@blackthornsecurity.com</a></li>
+                <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-blue-500"/> Oklahoma • USA</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-3">Quick Links</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#services" className="hover:underline">Services</a></li>
+                <li><a href="#credentials" className="hover:underline">Credentials</a></li>
+                <li><a href="#industries" className="hover:underline">Industries</a></li>
+                <li><a href="#contact" className="hover:underline">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="border-t border-slate-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 text-xs text-slate-500 flex flex-col sm:flex-row gap-2 justify-between">
+            <p>© {new Date().getFullYear()} Blackthorn Security Solutions LLC. All rights reserved.</p>
+            <p>License: OK‑XXXXXX • Insurance & Bonding on file • C.L.E.E.T. I, II, IV</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+function ServiceCard({icon, title, desc}:{icon:React.ReactNode, title:string, desc:string}){
+  return (
+    <Card className="hover:shadow-lg transition-shadow">
+      <CardContent className="p-6">
+        <div className="flex items-center gap-3">
+          <div className="p-2 rounded-xl bg-blue-100 text-blue-700">{icon}</div>
+          <h3 className="font-semibold">{title}</h3>
+        </div>
+        <p className="mt-3 text-sm text-slate-600">{desc}</p>
+      </CardContent>
+    </Card>
+  );
+}
+
+function Step({n, title, desc}:{n:number, title:string, desc:string}){
+  return (
+    <div className="relative p-6 rounded-2xl border bg-white">
+      <div className="absolute -top-3 -left-3 h-10 w-10 rounded-xl bg-blue-600 text-white grid place-items-center font-bold">{n}</div>
+      <h4 className="font-semibold pl-8">{title}</h4>
+      <p className="mt-2 text-sm text-slate-600 pl-8">{desc}</p>
+    </div>
+  );
+}
