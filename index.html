@@ -4,9 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Blackthorn Security Solutions LLC</title>
-  <meta name="description" content="Veteran‑owned security. Armed and unarmed. C.L.E.E.T. certified I, II, IV. Licensed and bonded. Professional, Discreet, and Reliable."/>
+  <meta name="description" content="Veteran-owned security. Armed and unarmed. C.L.E.E.T. certified I, II, IV. Licensed and bonded. Professional, Discreet, and Reliable."/>
   <style>
-    :root{--blue:#1d4ed8;--blue-dark:#1e40af;--ink:#0f172a;--muted:#475569;--bg:#ffffff;--bg-soft:#f1f5f9}
+    /* Navy palette */
+    :root{--blue:#0b1d3a;--blue-dark:#091531;--ink:#0f172a;--muted:#475569;--bg:#ffffff;--bg-soft:#f1f5f9}
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg)}
     a{color:inherit;text-decoration:none}
@@ -14,14 +15,17 @@
     .btn{display:inline-block;padding:10px 16px;border-radius:10px;font-weight:600;border:1px solid transparent}
     .btn.primary{background:var(--blue);color:#fff}
     .btn.primary:hover{background:var(--blue-dark)}
-    .btn.outline{border-color:#cbd5e1;color:var(--ink)}
+    /* Explore Services = white text on hero */
+    .btn.outline{border-color:#ffffff;color:#ffffff}
+    .btn.outline:hover{background:rgba(255,255,255,.12)}
     header{position:sticky;top:0;z-index:30;background:#fffcc;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border-bottom:1px solid #e2e8f0}
     header .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     nav a{margin-left:16px;font-weight:600}
     nav a:hover{color:var(--blue)}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800}
     .shield{width:22px;height:22px;border-radius:8px;background:var(--blue);display:grid;place-items:center;color:#fff;font-size:14px}
-    .hero{background:linear-gradient(180deg,#1e3a8a 0%, #1d4ed8 100%);color:#fff}
+    /* Navy hero gradient */
+    .hero{background:linear-gradient(180deg,#0a1640 0%, #0b1d3a 100%);color:#fff}
     .hero .grid{display:grid;grid-template-columns:1fr;gap:24px;padding:64px 0}
     .hero h1{font-size:40px;line-height:1.1;margin:0}
     .hero p{color:#dbeafe;margin:12px 0 0}
@@ -70,7 +74,7 @@
       <div class="grid">
         <div>
           <h1>Professional, Discreet, and Reliable</h1>
-          <p>Veteran‑owned and operated. Armed and unarmed officers. C.L.E.E.T. certified (I, II, IV). Licensed and bonded.</p>
+          <p>Veteran-owned and operated. Armed and unarmed officers. C.L.E.E.T. certified (I, II, IV). Licensed and bonded.</p>
           <div style="margin-top:16px">
             <a class="btn primary" href="#contact">Get a Free Assessment</a>
             <a class="btn outline" href="#services" style="margin-left:8px">Explore Services</a>
@@ -82,7 +86,7 @@
         </div>
         <div class="card">
           <h3 style="margin:0 0 6px">Rapid Quote</h3>
-          <div class="sub">Answer a few questions. Same‑day estimate.</div>
+          <div class="sub">Answer a few questions. Same-day estimate.</div>
           <form action="#contact" style="margin-top:10px" onsubmit="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">
             <div class="stack">
               <input placeholder="Name" />
@@ -108,7 +112,7 @@
   <section id="credentials" class="section">
     <div class="container">
       <h2>Credentials</h2>
-      <p class="sub">Veteran‑owned. Licensed and bonded. C.L.E.E.T. I, II, IV. Armed and unarmed.</p>
+      <p class="sub">Veteran-owned. Licensed and bonded. C.L.E.E.T. I, II, IV. Armed and unarmed.</p>
       <div class="grid-4 grid-2" style="margin-top:14px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
         <div class="card">Veteran Owned & Operated</div>
         <div class="card">Licensed & Bonded</div>
@@ -122,9 +126,9 @@
   <section id="services" class="section muted">
     <div class="container">
       <h2>Comprehensive Security Services</h2>
-      <p class="sub">Scaled to your risk profile and venue. Short‑notice coverage available.</p>
+      <p class="sub">Scaled to your risk profile and venue. Short-notice coverage available.</p>
       <div class="grid-3" style="margin-top:14px">
-        <div class="card"><strong>On‑Site & Facility Security</strong><br><span class="sub">Uniformed officers, access control, visitor management, incident reporting.</span></div>
+        <div class="card"><strong>On-Site & Facility Security</strong><br><span class="sub">Uniformed officers, access control, visitor management, incident reporting.</span></div>
         <div class="card"><strong>Event Security</strong><br><span class="sub">Crowd management, ticketing support, VIP areas, entry screening.</span></div>
         <div class="card"><strong>Executive Protection</strong><br><span class="sub">Discreet close protection, advance work, route planning, residential.</span></div>
         <div class="card"><strong>Mobile Patrol</strong><br><span class="sub">Marked/unmarked patrols, perimeter checks, alarm response, lock/unlock.</span></div>
@@ -144,7 +148,7 @@
         <span class="pill">Corporate Offices</span>
         <span class="pill">Warehouses</span>
         <span class="pill">Construction Sites</span>
-        <span class="pill">Multi‑Family/HOA</span>
+        <span class="pill">Multi-Family/HOA</span>
         <span class="pill">Healthcare</span>
         <span class="pill">Retail</span>
         <span class="pill">Hospitality</span>
@@ -174,13 +178,18 @@
       <div class="grid-2" style="margin-top:14px">
         <div class="stack">
           <div class="card">
-            <div><strong>Phone:</strong> <a href="tel:+1-555-555-0199">(405) 436-5915</a></div>
+            <div><strong>Phone:</strong> <a href="tel:+14054365915">(405) 436-5915</a></div>
             <div style="margin-top:6px"><strong>Email:</strong> <a href="mailto:forestdye13@gmail.com">forestdye13@gmail.com</a></div>
-            <div style="margin-top:6px"><strong>License #:</strong> OK‑XXXXXX</div>
-            <div style="margin-top:6px"><strong>Location:</strong> Oklahoma • USA</div>
+            <div style="margin-top:6px"><strong>License #:</strong> OK-XXXXXX</div>
+            <div style="margin-top:6px"><strong>Location:</strong> Oklahoma City, OK</div>
           </div>
           <div class="card">
-            <form method="post" action="mailto:forestdye13@gmail.com" enctype="text/plain">
+            <!-- Email form via FormSubmit -->
+            <form action="https://formsubmit.co/forestdye13@gmail.com" method="POST">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="text" name="_honey" style="display:none">
+              <input type="hidden" name="_subject" value="New Blackthorn quote request">
+              <input type="hidden" name="_template" value="table">
               <div class="row">
                 <input required placeholder="First name" name="first_name" />
                 <input required placeholder="Last name" name="last_name" />
@@ -201,7 +210,7 @@
               </select>
               <textarea style="margin-top:12px" placeholder="Describe your need, dates, location, and hours." name="details"></textarea>
               <button class="btn primary" style="margin-top:12px" type="submit">Submit</button>
-              <div class="sub" style="margin-top:6px;font-size:12px">Submits via your email program. Replace the email in the form action for production.</div>
+              <div class="sub" style="margin-top:6px;font-size:12px">Powered by FormSubmit.</div>
             </form>
           </div>
         </div>
@@ -216,7 +225,7 @@
         <div>
           <div class="brand"><div class="shield">🛡️</div> Blackthorn Security Solutions LLC</div>
           <div class="small" style="margin-top:6px">Professional, Discreet, and Reliable.</div>
-          <div class="small" style="margin-top:6px">Veteran‑owned. Armed & unarmed. C.L.E.E.T. I, II, IV. Licensed & bonded.</div>
+          <div class="small" style="margin-top:6px">Veteran-owned. Armed & unarmed. C.L.E.E.T. I, II, IV. Licensed & bonded.</div>
         </div>
         <div>
           <div class="small"><strong>Quick Links</strong></div>
