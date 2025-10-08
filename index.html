@@ -1,102 +1,146 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Blackthorn Security Solutions LLC | Oklahoma City</title>
-  <meta name="description" content="Veteran-owned security company in Oklahoma City. Armed and unarmed officers. C.L.E.E.T. certified I, II, IV. Licensed and bonded. 24/7 protection.">
-  <meta name="keywords" content="Oklahoma City security, armed security, unarmed security, CLEET certified, executive protection, event security, veteran owned">
-  <meta name="author" content="Blackthorn Security Solutions LLC">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blackthorn Security Solutions LLC</title>
-  <meta name="description" content="Veteran-owned security. Armed and unarmed. C.L.E.E.T. certified I, II, IV. Licensed and bonded. Professional, Discreet, and Reliable."/>
+  <title>Blackthorn Security Solutions LLC | Oklahoma City</title>
+  <meta name="description" content="Veteran‑owned security company in Oklahoma City. Armed and unarmed officers. C.L.E.E.T. certified I, II, IV. Licensed and bonded. 24/7 protection." />
+  <meta name="keywords" content="Oklahoma City security, armed security, unarmed security, CLEET certified, executive protection, event security, veteran owned" />
+  <meta name="author" content="Blackthorn Security Solutions LLC" />
+  <meta name="theme-color" content="#0b1d3a" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230b1d3a'/><text x='50' y='58' font-size='54' text-anchor='middle' fill='white'>🛡️</text></svg>">
   <style>
-    /* Navy palette */
-    :root{--blue:#0b1d3a;--blue-dark:#091531;--ink:#0f172a;--muted:#475569;--bg:#ffffff;--bg-soft:#f1f5f9}
+    /* Design tokens */
+    :root{
+      --blue:#0b1d3a;--blue-2:#0a1640;--blue-3:#091531;--ink:#0f172a;--muted:#475569;--muted-2:#64748b;
+      --bg:#ffffff;--bg-soft:#f1f5f9;--ok:#059669;--warn:#ca8a04;--error:#b91c1c;
+      --radius:14px;--radius-sm:10px;--shadow:0 1px 2px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.06);
+      --space-1:8px;--space-2:12px;--space-3:16px;--space-4:20px;--space-5:28px;--space-6:40px;--space-7:56px
+    }
     *{box-sizing:border-box}
+    html:focus-within{scroll-behavior:smooth}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;color:var(--ink);background:var(--bg)}
     a{color:inherit;text-decoration:none}
-    .container{max-width:1120px;margin:0 auto;padding:0 16px}
-    .btn{display:inline-block;padding:10px 16px;border-radius:10px;font-weight:600;border:1px solid transparent}
+    a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #2563eb;outline-offset:2px}
+    .container{max-width:1120px;margin:0 auto;padding:0 var(--space-3)}
+
+    /* Buttons */
+    .btn{display:inline-block;padding:10px 16px;border-radius:var(--radius-sm);font-weight:600;border:1px solid transparent;line-height:1.1}
     .btn.primary{background:var(--blue);color:#fff}
-    .btn.primary:hover{background:var(--blue-dark)}
-    /* Explore Services = white text on hero */
-    .btn.outline{border-color:#ffffff;color:#ffffff}
-    .btn.outline:hover{background:rgba(255,255,255,.12)}
-    header{position:sticky;top:0;z-index:30;background:#fffcc;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border-bottom:1px solid #e2e8f0}
-    header .row{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    nav a{margin-left:16px;font-weight:600}
-    nav a:hover{color:var(--blue)}
+    .btn.primary:hover{background:var(--blue-3)}
+    .btn.ghost{border-color:#ffffff;color:#ffffff}
+    .btn.ghost:hover{background:rgba(255,255,255,.12)}
+    .btn.outline{border-color:#cbd5e1;color:var(--ink)}
+    .btn.outline:hover{background:#eef2ff}
+
+    /* Header */
+    .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip:focus{position:fixed;left:12px;top:12px;width:auto;height:auto;z-index:1000;background:#fff;padding:8px 12px;border-radius:10px;box-shadow:var(--shadow)}
+    header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid #e2e8f0}
+    header .row{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800}
     .shield{width:22px;height:22px;border-radius:8px;background:var(--blue);display:grid;place-items:center;color:#fff;font-size:14px}
-    /* Navy hero gradient */
-    .hero{background:linear-gradient(180deg,#0a1640 0%, #0b1d3a 100%);color:#fff}
-    .hero .grid{display:grid;grid-template-columns:1fr;gap:24px;padding:64px 0}
-    .hero h1{font-size:40px;line-height:1.1;margin:0}
+    nav a{margin-left:14px;font-weight:600}
+    nav a:hover{color:var(--blue)}
+    .call-cta{display:flex;align-items:center;gap:8px}
+
+    /* Hero */
+    .hero{color:#fff;position:relative;isolation:isolate}
+    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(1200px 600px at 70% -10%,rgba(59,130,246,.25),transparent 60%),linear-gradient(180deg,var(--blue-2) 0%, var(--blue) 100%);z-index:-2}
+    .hero::after{content:"";position:absolute;inset:0;background:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22 viewBox=%220 0 40 40%22><g fill=%22none%22 stroke=%22%231e293b%22 stroke-opacity=%220.25%22><path d=%22M0 20h40M20 0v40%22/></g></svg>');opacity:.15;mix-blend:overlay;z-index:-1}
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--space-5);padding:var(--space-6) 0}
+    .hero h1{font-size:42px;line-height:1.1;margin:0}
     .hero p{color:#dbeafe;margin:12px 0 0}
-    .hero .badges{display:flex;gap:16px;flex-wrap:wrap;color:#dbeafe;margin-top:16px;font-size:14px}
-    .card{background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:18px;box-shadow:0 1px 1px rgba(0,0,0,.02)}
-    .stack{display:grid;gap:16px}
-    .section{padding:56px 0}
+    .badges{display:flex;gap:12px;flex-wrap:wrap;color:#dbeafe;margin-top:14px;font-size:14px}
+
+    /* Cards and sections */
+    .card{background:#fff;border:1px solid #e2e8f0;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .stack{display:grid;gap:var(--space-2)}
+    .section{padding:var(--space-7) 0}
     .section.muted{background:var(--bg-soft)}
     h2{font-size:28px;margin:0 0 8px}
     .sub{color:var(--muted)}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
     .pill{display:inline-block;padding:6px 12px;background:#eef2ff;border-radius:999px;font-size:14px;margin:6px 6px 0 0}
-    .step{position:relative;padding:18px;border:1px solid #e2e8f0;border-radius:14px;background:#fff}
+    .step{position:relative;padding:18px;border:1px solid #e2e8f0;border-radius:var(--radius);background:#fff}
     .step .n{position:absolute;left:-12px;top:-12px;width:40px;height:40px;border-radius:12px;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:800}
-    footer{background:#0b1220;color:#cbd5e1}
-    footer .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    footer .small{color:#94a3b8;font-size:12px}
-    /* responsive */
-    @media (max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
-    @media (max-width:640px){.grid-3,.grid-2{grid-template-columns:1fr}.hero h1{font-size:34px}}
-    /* simple form */
-    input,select,textarea{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:10px;font-size:16px}
+
+    /* Forms */
+    input,select,textarea{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:var(--radius-sm);font-size:16px}
     textarea{min-height:120px}
     .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media (max-width:640px){.row{grid-template-columns:1fr}}
+
+    /* Testimonials */
+    .quote{display:grid;gap:8px}
+    .quote .who{font-weight:700}
+
+    /* FAQ */
+    details{background:#fff;border:1px solid #e2e8f0;border-radius:var(--radius);padding:12px}
+    details+details{margin-top:12px}
+    summary{cursor:pointer;font-weight:700}
+
+    /* Footer */
+    footer{background:#0b1220;color:#cbd5e1}
+    footer .cols{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+    footer .small{color:#94a3b8;font-size:12px}
+    footer a{color:#cbd5e1}
+
+    /* Responsive */
+    @media (max-width:980px){.hero .grid{grid-template-columns:1fr}.grid-4{grid-template-columns:1fr 1fr}}
+    @media (max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){.grid-3,.grid-2{grid-template-columns:1fr}.hero h1{font-size:34px}.row{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
+
   <!-- Header -->
   <header>
-    <div class="container row">
-      <div class="brand"><div class="shield">🛡️</div> Blackthorn Security Solutions LLC</div>
-      <nav>
+    <div class="container row" style="display:flex;gap:12px;align-items:center;justify-content:space-between">
+      <div class="brand" aria-label="Blackthorn Security home">
+        <div class="shield" aria-hidden="true">🛡️</div> Blackthorn Security Solutions LLC
+      </div>
+      <nav aria-label="Primary">
         <a href="#services">Services</a>
         <a href="#credentials">Credentials</a>
         <a href="#industries">Industries</a>
         <a href="#contact">Contact</a>
       </nav>
+      <div class="call-cta">
+        <a class="btn outline" href="#contact">Free Assessment</a>
+        <a class="btn primary" href="tel:+14054365915" aria-label="Call Blackthorn at 405-436-5915">Call (405) 436-5915</a>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" role="region" aria-label="Hero">
     <div class="container">
       <div class="grid">
         <div>
-          <h1>Professional, Discreet, and Reliable</h1>
-          <p>Veteran-owned and operated. Armed and unarmed officers. C.L.E.E.T. certified (I, II, IV). Licensed and bonded.</p>
+          <h1 id="main">Professional, Discreet, and Reliable</h1>
+          <p>Veteran‑owned and operated. Armed and unarmed officers. C.L.E.E.T. certified (I, II, IV). Licensed and bonded.</p>
           <div style="margin-top:16px">
-            <a class="btn outline" href="#contact">Get a Free Assessment</a>
-            <a class="btn outline" href="#services" style="margin-left:8px">Explore Services</a>
+            <a class="btn ghost" href="#contact">Get a Free Assessment</a>
+            <a class="btn ghost" href="#services" style="margin-left:8px">Explore Services</a>
           </div>
-          <div class="badges">
+          <div class="badges" aria-label="Highlights">
             <div>24/7 Availability</div>
             <div>Custom Post Orders</div>
+            <div>Same‑day Quotes</div>
           </div>
         </div>
-        <div class="card">
-          <h3 style="margin:0 0 6px">Rapid Quote</h3>
-          <div class="sub">Answer a few questions. Same-day estimate.</div>
-          <form action="#contact" style="margin-top:10px" onsubmit="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;">
+        <div class="card" aria-labelledby="rapid-quote">
+          <h3 id="rapid-quote" style="margin:0 0 6px">Rapid Quote</h3>
+          <div class="sub">Answer a few questions. Same‑day estimate.</div>
+          <form action="#contact" style="margin-top:10px" onsubmit="document.getElementById('contact').scrollIntoView({behavior:'smooth'});return false;" aria-label="Rapid quote form">
             <div class="stack">
-              <input placeholder="Name" />
-              <input placeholder="Email" type="email" />
-              <input placeholder="Phone" />
-              <select>
+              <input placeholder="Name" aria-label="Name" />
+              <input placeholder="Email" type="email" aria-label="Email" />
+              <input placeholder="Phone" aria-label="Phone" />
+              <select aria-label="Service">
                 <option>Event Security</option>
                 <option>Property/Facility Security</option>
                 <option>Executive Protection</option>
@@ -112,17 +156,13 @@
     </div>
   </section>
 
-  <!-- Credentials -->
-  <section id="credentials" class="section">
-    <div class="container">
-      <h2>Credentials</h2>
-      <p class="sub">Veteran-owned. Licensed and bonded. C.L.E.E.T. I, II, IV. Armed and unarmed.</p>
-      <div class="grid-4 grid-2" style="margin-top:14px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
-        <div class="card">Veteran Owned & Operated</div>
-        <div class="card">Licensed & Bonded</div>
-        <div class="card">C.L.E.E.T. Certified I, II, IV</div>
-        <div class="card">Armed & Unarmed Officers</div>
-      </div>
+  <!-- Trust row -->
+  <section class="section" aria-label="Trust badges">
+    <div class="container grid-4">
+      <div class="card" aria-label="Veteran owned">Veteran Owned & Operated</div>
+      <div class="card" aria-label="Licensed and bonded">Licensed & Bonded</div>
+      <div class="card" aria-label="CLEET levels">C.L.E.E.T. Certified I, II, IV</div>
+      <div class="card" aria-label="Armed and unarmed">Armed & Unarmed Officers</div>
     </div>
   </section>
 
@@ -130,9 +170,9 @@
   <section id="services" class="section muted">
     <div class="container">
       <h2>Comprehensive Security Services</h2>
-      <p class="sub">Scaled to your risk profile and venue. Short-notice coverage available.</p>
+      <p class="sub">Scaled to your risk profile and venue. Short‑notice coverage available.</p>
       <div class="grid-3" style="margin-top:14px">
-        <div class="card"><strong>On-Site & Facility Security</strong><br><span class="sub">Uniformed officers, access control, visitor management, incident reporting.</span></div>
+        <div class="card"><strong>On‑Site & Facility Security</strong><br><span class="sub">Uniformed officers, access control, visitor management, incident reporting.</span></div>
         <div class="card"><strong>Event Security</strong><br><span class="sub">Crowd management, ticketing support, VIP areas, entry screening.</span></div>
         <div class="card"><strong>Executive Protection</strong><br><span class="sub">Discreet close protection, advance work, route planning, residential.</span></div>
         <div class="card"><strong>Mobile Patrol</strong><br><span class="sub">Marked/unmarked patrols, perimeter checks, alarm response, lock/unlock.</span></div>
@@ -152,7 +192,7 @@
         <span class="pill">Corporate Offices</span>
         <span class="pill">Warehouses</span>
         <span class="pill">Construction Sites</span>
-        <span class="pill">Multi-Family/HOA</span>
+        <span class="pill">Multi‑Family/HOA</span>
         <span class="pill">Healthcare</span>
         <span class="pill">Retail</span>
         <span class="pill">Hospitality</span>
@@ -162,8 +202,20 @@
     </div>
   </section>
 
+  <!-- Testimonials -->
+  <section class="section muted" aria-label="Testimonials">
+    <div class="container">
+      <h2>What clients report</h2>
+      <div class="grid-3" style="margin-top:14px">
+        <div class="card quote"><p>“Clear post orders and visible patrols cut vandalism incidents to zero for our site within two weeks.”</p><div class="who">Facilities Manager, OKC</div></div>
+        <div class="card quote"><p>“Professional at the gate and discreet with our VIPs. We rehired for every event this season.”</p><div class="who">Events Director, Edmond</div></div>
+        <div class="card quote"><p>“Daily activity reports with photos made accountability simple for our property team.”</p><div class="who">Property Owner, Moore</div></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Process -->
-  <section class="section muted">
+  <section class="section" aria-label="Engagement process">
     <div class="container">
       <h2>Simple Engagement Process</h2>
       <div class="grid-3" style="margin-top:14px">
@@ -174,62 +226,92 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="section muted" aria-label="FAQ">
+    <div class="container">
+      <h2>Common questions</h2>
+      <details>
+        <summary>Are your officers C.L.E.E.T. certified?</summary>
+        <p class="sub">Yes. Levels I, II, and IV. We match certification to the assignment requirements.</p>
+      </details>
+      <details>
+        <summary>Do you provide armed and unarmed coverage?</summary>
+        <p class="sub">Yes. We scope risk and local ordinances first, then recommend armed or unarmed with rationale.</p>
+      </details>
+      <details>
+        <summary>How fast can you start?</summary>
+        <p class="sub">Often within 24–72 hours for standard posts. Events and after‑hours can be faster with availability.</p>
+      </details>
+      <details>
+        <summary>Do you carry insurance and bonds?</summary>
+        <p class="sub">Yes. Certificates available upon request. We are licensed and bonded in Oklahoma.</p>
+      </details>
+    </div>
+  </section>
+
   <!-- Contact -->
-  <section id="contact" class="section">
+  <section id="contact" class="section" aria-label="Contact and quote">
     <div class="container">
       <h2>Request a Quote</h2>
       <p class="sub">Response within one business day. For urgent needs, call directly.</p>
       <div class="grid-2" style="margin-top:14px">
         <div class="stack">
-          <div class="card">
-            <div><strong>Phone:</strong> <a href="tel:+14054365915">(405) 436-5915</a></div>
+          <div class="card" aria-label="Company contact">
+            <div><strong>Phone:</strong> <a href="tel:+14054365915" rel="nofollow">(405) 436‑5915</a></div>
             <div style="margin-top:6px"><strong>Email:</strong> <a href="mailto:blackthornsolutions1@gmail.com">blackthornsolutions1@gmail.com</a></div>
             <div style="margin-top:6px"><strong>License #:</strong> OK-0150923</div>
             <div style="margin-top:6px"><strong>Location:</strong> Oklahoma City, OK</div>
+            <div style="margin-top:6px"><strong>Hours:</strong> Mon–Sun 24/7</div>
           </div>
-          <div class="card">
-            <!-- Email form via FormSubmit -->
-            <form action="https://formsubmit.co/blackthornsolutions1@gmail.com" method="POST">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="text" name="_honey" style="display:none">
-              <input type="hidden" name="_subject" value="New Blackthorn quote request">
-              <input type="hidden" name="_template" value="table">
-              <div class="row">
-                <input required placeholder="First name" name="first_name" />
-                <input required placeholder="Last name" name="last_name" />
-              </div>
-              <div class="row" style="margin-top:12px">
-                <input required type="email" placeholder="Email" name="email" />
-                <input required placeholder="Phone" name="phone" />
-              </div>
-              <input style="margin-top:12px" placeholder="Company (optional)" name="company" />
-              <select style="margin-top:12px" name="service">
-                <option>Event Security</option>
-                <option>Property/Facility Security</option>
-                <option>Executive Protection</option>
-                <option>Mobile Patrol</option>
-                <option>Construction Site</option>
-                <option>Retail/Loss Prevention</option>
-                <option>Other</option>
-              </select>
-              <textarea style="margin-top:12px" placeholder="Describe your need, dates, location, and hours." name="details"></textarea>
-              <button class="btn primary" style="margin-top:12px" type="submit">Submit</button>
-              <div class="sub" style="margin-top:6px;font-size:12px">Powered by FormSubmit.</div>
-            </form>
+          <div class="card" aria-label="Case study snippet">
+            <strong>Recent result</strong>
+            <p class="sub" style="margin-top:6px">Construction site coverage with mobile patrols reduced unauthorized access attempts by 80% in the first month. Daily photo logs enabled fast GC follow‑ups.</p>
           </div>
+        </div>
+        <div class="card">
+          <!-- Email form via FormSubmit -->
+          <form action="https://formsubmit.co/blackthornsolutions1@gmail.com" method="POST" aria-label="Quote request form">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_subject" value="New Blackthorn quote request">
+            <input type="hidden" name="_template" value="table">
+            <div class="row">
+              <input required placeholder="First name" name="first_name" autocomplete="given-name" />
+              <input required placeholder="Last name" name="last_name" autocomplete="family-name" />
+            </div>
+            <div class="row" style="margin-top:12px">
+              <input required type="email" placeholder="Email" name="email" autocomplete="email" />
+              <input required placeholder="Phone" name="phone" autocomplete="tel" />
+            </div>
+            <input style="margin-top:12px" placeholder="Company (optional)" name="company" autocomplete="organization" />
+            <select style="margin-top:12px" name="service">
+              <option>Event Security</option>
+              <option>Property/Facility Security</option>
+              <option>Executive Protection</option>
+              <option>Mobile Patrol</option>
+              <option>Construction Site</option>
+              <option>Retail/Loss Prevention</option>
+              <option>Other</option>
+            </select>
+            <textarea style="margin-top:12px" placeholder="Describe your need, dates, location, and hours." name="details"></textarea>
+            <button class="btn primary" style="margin-top:12px" type="submit">Submit</button>
+            <div class="sub" style="margin-top:6px;font-size:12px">Powered by FormSubmit.</div>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer role="contentinfo">
     <div class="container" style="padding:28px 0">
       <div class="cols">
         <div>
-          <div class="brand"><div class="shield">🛡️</div> Blackthorn Security Solutions LLC</div>
+          <div class="brand"><div class="shield" aria-hidden="true">🛡️</div> Blackthorn Security Solutions LLC</div>
           <div class="small" style="margin-top:6px">Professional, Discreet, and Reliable.</div>
-          <div class="small" style="margin-top:6px">Veteran-owned. Armed & unarmed. C.L.E.E.T. I, II, IV. Licensed & bonded.</div>
+          <div class="small" style="margin-top:6px">Veteran‑owned. Armed & unarmed. C.L.E.E.T. I, II, IV. Licensed & bonded.</div>
+          <div class="small" style="margin-top:6px">Service area: Oklahoma City metro and surrounding counties.</div>
+          <div class="small" style="margin-top:6px">Phone: <a href="tel:+14054365915">(405) 436‑5915</a> · Email: <a href="mailto:blackthornsolutions1@gmail.com">blackthornsolutions1@gmail.com</a></div>
         </div>
         <div>
           <div class="small"><strong>Quick Links</strong></div>
@@ -237,11 +319,44 @@
           <div><a class="small" href="#credentials">Credentials</a></div>
           <div><a class="small" href="#industries">Industries</a></div>
           <div><a class="small" href="#contact">Contact</a></div>
+          <div style="margin-top:6px"><a class="small" href="#privacy">Privacy Policy</a> · <a class="small" href="#terms">Terms</a></div>
+        </div>
+        <div>
+          <div class="small"><strong>License</strong></div>
+          <div class="small" style="margin-top:6px">Oklahoma License # OK‑0150923</div>
+          <div class="small" style="margin-top:6px">Insured and bonded. Certificates available on request.</div>
         </div>
       </div>
       <div class="small" style="margin-top:18px;border-top:1px solid #1f2937;padding-top:12px">© <span id="y"></span> Blackthorn Security Solutions LLC. All rights reserved.</div>
     </div>
-    <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
   </footer>
+
+  <!-- JSON‑LD LocalBusiness schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SecurityService",
+    "name": "Blackthorn Security Solutions LLC",
+    "url": "https://tbl1980.github.io/blackthorn-site/",
+    "telephone": "+1-405-436-5915",
+    "email": "blackthornsolutions1@gmail.com",
+    "areaServed": [{"@type":"City","name":"Oklahoma City"}],
+    "address": {"@type":"PostalAddress","addressLocality":"Oklahoma City","addressRegion":"OK","addressCountry":"US"},
+    "openingHours": "Mo-Su 00:00-23:59",
+    "founder": "Veteran owned",
+    "sameAs": []
+  }
+  </script>
+
+  <script>
+    // Year stamp
+    document.getElementById('y').textContent=new Date().getFullYear();
+
+    // Add shadow on scroll for header clarity
+    const hdr=document.querySelector('header');
+    const toggleShadow=()=>{hdr.style.boxShadow=window.scrollY>6?'0 8px 20px rgba(0,0,0,.06)':'none'};
+    window.addEventListener('scroll',toggleShadow,{passive:true});
+    toggleShadow();
+  </script>
 </body>
 </html>
